@@ -5,13 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import br.com.aucelio.pages.EnterVehicleDataPage;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 
 public class EnterVehicleDataSteps {
 	
 	WebDriver driver;
-	
+	EnterVehicleDataPage enterVehicleDataPage;
 
 	@Dado("que acesse no site {string}")
 	public void queAcesseNoSite(String string) {
@@ -24,9 +25,9 @@ public class EnterVehicleDataSteps {
 
 	@Dado("que o formulario, aba enter  Automobile")
 	public void queOFormularioAbaEnterAutomobile() throws InterruptedException {
-		driver.findElement(By.id("nav_automobile")).click();
+		enterVehicleDataPage = new EnterVehicleDataPage(driver);
+		enterVehicleDataPage.abrirOpçãoVeiculo();
 		Thread.sleep(2000);
-
 	}
 
 	@Dado("selecione a marca do veiculo {string}")
