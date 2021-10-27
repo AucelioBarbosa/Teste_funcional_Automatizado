@@ -1,5 +1,5 @@
 <h1 align = "center">
-  teste funcional automatizados
+  Teste Funcional Automatizados
 </h1>
 
 <h2 align = "center">
