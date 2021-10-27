@@ -10,7 +10,7 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 
 public class EnterVehicleDataSteps {
-	
+
 	WebDriver driver;
 	EnterVehicleDataPage enterVehicleDataPage;
 
@@ -20,7 +20,7 @@ public class EnterVehicleDataSteps {
 		driver = new FirefoxDriver();
 		driver.get(string);
 		driver.manage().window().maximize();
-	
+
 	}
 
 	@Dado("que o formulario, aba enter  Automobile")
@@ -32,33 +32,32 @@ public class EnterVehicleDataSteps {
 
 	@Dado("selecione a marca do veiculo {string}")
 	public void selecioneAMarcaDoVeiculo(String string) {
-
-		WebElement dropdown = driver.findElement(By.id("make"));
-		dropdown.findElement(By.xpath("//option[. = '" + string + "']")).click();
+		enterVehicleDataPage = new EnterVehicleDataPage(driver);
+		enterVehicleDataPage.selecionarVeiculo(string);
 	}
 
-	@Dado("preencha o campoa pontenica {double}")
-	public void preenchaOCampoaPontenica(Double double1) {
-		driver.findElement(By.id("engineperformance")).click();
-		driver.findElement(By.id("engineperformance")).sendKeys("" + double1 + "");
+	@Dado("preencha o campoa pontenica {string}")
+	public void preenchaOCampoaPontenica(String string) {
+		enterVehicleDataPage = new EnterVehicleDataPage(driver);
+		enterVehicleDataPage.preecherCampoPotencia(string);
 	}
 
-	@Dado("infrome o ano de fabircacao {int}\\/{int}\\/{int}")
-	public void infromeOAnoDeFabircacao(Integer int1, Integer int2, Integer int3) {
-		driver.findElement(By.id("dateofmanufacture")).click();
-		driver.findElement(By.id("dateofmanufacture")).sendKeys("" + int1 + "/" + int2 + "/" + int3 + "");
-
+	@Dado("infrome o ano de fabircacao {string}")
+	public void infromeOAnoDeFabircacao(String ano) {
+		enterVehicleDataPage = new EnterVehicleDataPage(driver);
+		enterVehicleDataPage.preecherCampoAnoFabricacao(ano);
 	}
 
 	@Dado("infrome a quantidade de passageiros {int}")
-	public void infromeAQuantidadeDePassageiros(Integer int1) {
-		WebElement dropdown = driver.findElement(By.id("numberofseats"));
-		dropdown.findElement(By.xpath("//option[. = '" + int1 + "']")).click();
+	public void infromeAQuantidadeDePassageiros(Integer qtd) {
+		enterVehicleDataPage = new EnterVehicleDataPage(driver);
+		enterVehicleDataPage.preecherCampoQtdPassageiros(qtd);
+		
 	}
 
 	@Dado("selecione o timpo do combustivel {string}")
 	public void selecioneOTimpoDoCombustivel(String string) {
-		driver.findElement(By.id("fuel")).click();
+		
 		WebElement dropdown = driver.findElement(By.id("fuel"));
 		dropdown.findElement(By.xpath("//option[. = '" + string + "']")).click();
 
@@ -85,8 +84,7 @@ public class EnterVehicleDataSteps {
 	@Entao("pressione o botao {string}")
 	public void pressioneOBotao(String string) {
 		driver.findElement(By.id("nextenterinsurantdata")).click();
+		driver.quit();
 	}
 
-	
-	
 }

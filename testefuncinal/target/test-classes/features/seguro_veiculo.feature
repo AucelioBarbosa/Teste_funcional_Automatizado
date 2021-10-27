@@ -7,8 +7,8 @@ Como cliente eu quer avaliar o seguro do meu veiculo
     Dado que acesse no site "http://sampleapp.tricentis.com/101/app.php"
     E que o formulario, aba enter  Automobile
     E selecione a marca do veiculo "BMW"
-    E preencha o campoa pontenica 2.8
-    E infrome o ano de fabircacao 01/01/2021
+    E preencha o campoa pontenica "2.8"
+    E infrome o ano de fabircacao "01/01/2021"
     E infrome a quantidade de passageiros 5
     E selecione o timpo do combustivel "Gas"
     E informe o preco de tabela 45000
@@ -16,7 +16,7 @@ Como cliente eu quer avaliar o seguro do meu veiculo
     E a quantas em milhas ano 300
     Entao pressione o botao "next"
 
-
+	@ignore
   Cenario: Deve preencher formulario Insurant Data
     Dado que o formulario, aba enter Insurant Data
     Quando informe o nome "Antony"
