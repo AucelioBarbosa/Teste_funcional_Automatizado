@@ -7,8 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public class EnterVehicleDataPage {
 
-	WebDriver driver;
-
+	protected WebDriver driver;
 	private By veiculo = By.id("nav_automobile");
 	private By campoMontadora = By.id("make");
 	private By potencia = By.id("engineperformance");

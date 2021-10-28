@@ -10,13 +10,15 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 
 public class EnterVehicleDataSteps {
-
-	WebDriver driver;
-	EnterVehicleDataPage enterVehicleDataPage;
-
+	
+	private final String DRIVER = "src/test/resources/webdriver/geckodriver.exe";
+	protected WebDriver driver;
+	private EnterVehicleDataPage enterVehicleDataPage;
+	
+	
 	@Dado("que acesse no site {string}")
 	public void queAcesseNoSite(String string) {
-		System.setProperty("webdriver.gecko.driver", "src/test/resources/webdriver/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", DRIVER);
 		driver = new FirefoxDriver();
 		driver.get(string);
 		driver.manage().window().maximize();
@@ -27,7 +29,7 @@ public class EnterVehicleDataSteps {
 	public void queOFormularioAbaEnterAutomobile() throws InterruptedException {
 		enterVehicleDataPage = new EnterVehicleDataPage(driver);
 		enterVehicleDataPage.abrirOpçãoVeiculo();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 	}
 
 	@Dado("selecione a marca do veiculo {string}")
