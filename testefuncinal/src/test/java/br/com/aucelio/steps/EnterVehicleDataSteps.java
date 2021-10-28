@@ -51,40 +51,38 @@ public class EnterVehicleDataSteps {
 	@Dado("infrome a quantidade de passageiros {int}")
 	public void infromeAQuantidadeDePassageiros(Integer qtd) {
 		enterVehicleDataPage = new EnterVehicleDataPage(driver);
-		enterVehicleDataPage.preecherCampoQtdPassageiros(qtd);
+		enterVehicleDataPage.selecionarQtdPassageiros(qtd);
 		
 	}
 
 	@Dado("selecione o timpo do combustivel {string}")
 	public void selecioneOTimpoDoCombustivel(String string) {
-		
-		WebElement dropdown = driver.findElement(By.id("fuel"));
-		dropdown.findElement(By.xpath("//option[. = '" + string + "']")).click();
+		enterVehicleDataPage = new EnterVehicleDataPage(driver);
+		enterVehicleDataPage.selecionarTipoCombustivel(string);
 
 	}
 
 	@Dado("informe o preco de tabela {int}")
 	public void informeOPrecoDeTabela(Integer int1) {
-		driver.findElement(By.id("listprice")).click();
-		driver.findElement(By.id("listprice")).sendKeys("" + int1 + "");
+		enterVehicleDataPage = new EnterVehicleDataPage(driver);
+		enterVehicleDataPage.preecherCampoPrecoTabela(int1);
 	}
 
-	@Dado("o numero da licenca {int}")
-	public void oNumeroDaLicenca(Integer int1) {
-		driver.findElement(By.id("licenseplatenumber")).click();
-		driver.findElement(By.id("licenseplatenumber")).sendKeys("" + int1 + "");
+	@Dado("o numero da licenca {string}")
+	public void oNumeroDaLicenca(String string) {
+		enterVehicleDataPage = new EnterVehicleDataPage(driver);
+		enterVehicleDataPage.preecherCampoNumeroLicenca(string);
 	}
 
-	@Dado("a quantas em milhas ano {int}")
-	public void aQuantasEmMilhasAno(Integer int1) {
-		driver.findElement(By.id("annualmileage")).click();
-		driver.findElement(By.id("annualmileage")).sendKeys("" + int1 + "");
+	@Dado("a quantas em milhas ano {string}")
+	public void aQuantasEmMilhasAno(String string) throws InterruptedException {
+		enterVehicleDataPage = new EnterVehicleDataPage(driver);
+		enterVehicleDataPage.preecherCampoQtdMilia(string);
 	}
 
 	@Entao("pressione o botao {string}")
 	public void pressioneOBotao(String string) {
-		driver.findElement(By.id("nextenterinsurantdata")).click();
-		driver.quit();
+		driver.findElement(By.id("nextenterinsurantdata")).click();	
 	}
 
 }

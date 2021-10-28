@@ -12,8 +12,8 @@ Como cliente eu quer avaliar o seguro do meu veiculo
     E infrome a quantidade de passageiros 5
     E selecione o timpo do combustivel "Gas"
     E informe o preco de tabela 45000
-    E o numero da licenca 00000021
-    E a quantas em milhas ano 300
+    E o numero da licenca "00000021"
+    E a quantas em milhas ano "300"
     Entao pressione o botao "next"
 
 	@ignore
