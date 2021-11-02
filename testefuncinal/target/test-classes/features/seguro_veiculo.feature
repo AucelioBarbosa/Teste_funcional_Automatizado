@@ -16,28 +16,27 @@ Como cliente eu quer avaliar o seguro do meu veiculo
     E a quantas em milhas ano "300"
     Entao pressione o botao "next"
 
-	@ignore
+	
   Cenario: Deve preencher formulario Insurant Data
-    Dado que o formulario, aba enter Insurant Data
-    Quando informe o nome "Antony"
-    E informe o sobre nome "Santiago"
-    E infome sua data de nascimento 05/30/1990
-    E selecione seu genro Male
-    E informe o seu endereco "street" 94
+    Dado informe o nome "Antony"
+    Quando informe o sobre nome "Santiago"
+    E informe sua data de nascimento "05/30/1990"
+    E selecione seu genro "Male"
+    E informe o seu endereco "street 94"
     E informe o pais "Brazil"
-    E informe o codigo postal 7000000
+    E informe o codigo postal "7000000"
     E informe a cidade "Brasilia"
     E selecionar a ocupacao "Public Official"
     E selecinar o hobbies "Other"
-    E infomar a website "test.com"
-    Entao pressione o botao "next"
+    E informar a website "test.com"
+    Entao click no botao "next"
 	
-	@ignore
+	
   Cenario: preencha o formulario product Data
-    Dado que o formulário, aba enter Product Data
-    E informar a data inicial 10/26/2022
-    E selecionar a soma do suguro 3.000.000,00
-    E selecionar a classificaçaoBunos 1
+    Dado que o formulario, aba enter Product Data
+    E informar a data inicial "10/26/2022"
+    E selecionar a soma do suguro "3.000.000,00"
+    E selecionar a classificacaoBunos 1
     E selecionar o seguro contra danos "No Coverage"
     E produto opcional "Euro Protection"
     E Selecionar carro de cortesia "Yes"

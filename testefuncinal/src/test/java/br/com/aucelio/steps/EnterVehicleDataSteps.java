@@ -1,28 +1,18 @@
 package br.com.aucelio.steps;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
 import br.com.aucelio.pages.EnterVehicleDataPage;
+import br.com.aucelio.util.Driver;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 
-public class EnterVehicleDataSteps {
+public class EnterVehicleDataSteps extends Driver{
 	
-	private final String DRIVER = "src/test/resources/webdriver/geckodriver.exe";
-	protected WebDriver driver;
 	private EnterVehicleDataPage enterVehicleDataPage;
 	
-	
+
 	@Dado("que acesse no site {string}")
 	public void queAcesseNoSite(String string) {
-		System.setProperty("webdriver.gecko.driver", DRIVER);
-		driver = new FirefoxDriver();
-		driver.get(string);
-		driver.manage().window().maximize();
-
+		Driver.abrir(string);
 	}
 
 	@Dado("que o formulario, aba enter  Automobile")
@@ -84,7 +74,7 @@ public class EnterVehicleDataSteps {
 
 	@Entao("pressione o botao {string}")
 	public void pressioneOBotao(String string) {
-		driver.findElement(By.id("nextenterinsurantdata")).click();	
+		enterVehicleDataPage = new EnterVehicleDataPage(driver);
+		enterVehicleDataPage.clicarNoBotao(string);
 	}
-
 }

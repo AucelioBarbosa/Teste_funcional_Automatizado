@@ -17,6 +17,7 @@ public class EnterVehicleDataPage {
 	private By tipoCombutivel = By.id("fuel");
 	private By numeroLicenca = By.id("licenseplatenumber");
 	private By qtdMilia = By.id("annualmileage");
+	private By btnNext = By.id("nextenterinsurantdata");
 
 	public EnterVehicleDataPage(WebDriver driver) {
 		this.driver = driver;
@@ -61,6 +62,10 @@ public class EnterVehicleDataPage {
 	
 	public void preecherCampoQtdMilia(String milia) {
 		driver.findElement(this.qtdMilia).sendKeys(milia);
+	}
+	public void clicarNoBotao(String btn) {
+		driver.findElement(btnNext).click();
+
 	}
 
 }
