@@ -33,13 +33,12 @@ Como cliente eu quer avaliar o seguro do meu veiculo
 	
 	
   Cenario: preencha o formulario product Data
-    Dado que o formulario, aba enter Product Data
-    E informar a data inicial "10/26/2022"
-    E selecionar a soma do suguro "3.000.000,00"
-    E selecionar a classificacaoBunos 1
+    Dado informar a data inicial "10/26/2022"
+    E selecionar a soma do suguro " 3.000.000,00"
+    E selecionar a classificacao "Bonus 1"
     E selecionar o seguro contra danos "No Coverage"
     E produto opcional "Euro Protection"
-    E Selecionar carro de cortesia "Yes"
+    E selecionar carro de cortesia "Yes"
     Entao pressione o botao "next"
 
 	@ignore

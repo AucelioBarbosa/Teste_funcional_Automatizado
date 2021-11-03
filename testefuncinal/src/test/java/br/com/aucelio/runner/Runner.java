@@ -12,10 +12,10 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		glue = "br.com.aucelio.steps",
 		plugin = "pretty",
 		tags = {"~@ignore"},
-		monochrome = false,
+		monochrome = true,
 		snippets = SnippetType.CAMELCASE,
-		dryRun = true,
-		strict = true
+		dryRun = false,
+		strict = false
 		)
 public class Runner {
 
